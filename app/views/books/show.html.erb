@@ -1,0 +1,5 @@
+<span><%= @book.name %></span>
+<span><%= @book.body %></span>
+<% if @book.user == current_user %>
+<%= link_to "削除", root_path(@book), method: :delete %>
+<% end %>
