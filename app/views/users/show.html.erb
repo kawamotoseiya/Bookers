@@ -1,4 +1,7 @@
+<% if @user.id == current_user.id %>
+        <p><%= link_to "Update User", edit_user_path(@user) %></p>
+<% end %>
 <% @books.each do |book| %>
-<span><%=book.title %></span>
+<span><%=book.name %></span>
 <span><%=book.body %></span>
 <% end %>
