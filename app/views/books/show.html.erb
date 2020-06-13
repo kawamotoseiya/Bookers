@@ -1,5 +1,24 @@
-<span><%= @book.name %></span>
-<span><%= @book.body %></span>
-<% if @book.user == current_user %>
-<%= link_to "削除", root_path(@book), method: :delete %>
-<% end %>
+<h2>Book detail</h2>
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Opinion</th>
+			<th colspan="2"></th>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+				<td><%= @book.name %></td>
+				<td><%= @book.body %></td>
+				<% if @book.user == current_user %>
+				<td><%= link_to "Edit", edit_book_path(@book) %></td>
+				<% end %>
+				<% if @book.user == current_user %>
+				<td><%= link_to "Destroy", books_path(@book), method: :delete, data: {confirm: "本当に消しますか?"} %></td>
+				<% end %>
+			</tr>
+	</tbody>
+</table>
+<p><%= flash[:notice] %></p>
+<%= render 'books/list', books:@books, user:current_user %>
