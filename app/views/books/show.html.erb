@@ -1,9 +1,15 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-3">
+			<%= render 'books/list', books:@books, user:current_user %>
+		</div>
+	<div class="col-xs-9">
 <h2>Book detail</h2>
-<table>
+<table class="table table-striped">
 	<thead>
 		<tr>
-			<th>Title</th>
-			<th>Opinion</th>
+			<th class="col-xs-2">Title</th>
+			<th class="col-xs-7">Opinion</th>
 			<th colspan="2"></th>
 		</tr>
 	</thead>
@@ -15,10 +21,11 @@
 				<td><%= link_to "Edit", edit_book_path(@book) %></td>
 				<% end %>
 				<% if @book.user == current_user %>
-				<td><%= link_to "Destroy", books_path(@book), method: :delete, data: {confirm: "本当に消しますか?"} %></td>
+				<td><%= link_to "Destroy", book_path(@book), method: :delete, data: {confirm: "本当に消しますか?"} %></td>
 				<% end %>
 			</tr>
 	</tbody>
 </table>
-<p><%= flash[:notice] %></p>
-<%= render 'books/list', books:@books, user:current_user %>
+	</div>
+	</div>
+</div>
