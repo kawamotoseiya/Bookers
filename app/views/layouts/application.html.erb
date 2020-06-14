@@ -9,11 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <div class="navbar navbar-default">
-    <div class="navbar-header">
-    <h1>Bookers</h1>
-      <div class="collapse navbar-collapse" id="navbarEexample">
-      <ul class="nav navbar-nav">
+  <div class="navbar navbar-default navbar-inverse">
+    <div class="container">
+    <nav class="nav navbar-nav navbar-left">
+      <h3>Bookers</h3>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
             <li class="">
               <%= link_to 'Home', user_path(current_user.id) %>
@@ -42,7 +44,7 @@
             </li>
       <% end %>
       </ul>
-      </div>
+    </nav>
     </div>
   </div>
   </body>

@@ -1,22 +1,36 @@
+
+<div class="container">
+	<div class="col-xs-3">
 <p><%= flash[:notice] %></p>
 <h2>User info</h2>
 <p><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%></p>
-<p>name</p>
-<%= user.name %>
-<p>introduce</p>
-<%= user.introduce %>
-<p><%= link_to "user edit", edit_user_path(current_user) %></p>
-<h2>New book</h2>
-<%= form_for(@book) do |f| %>
-  <% if @book.errors.any? %>
-  	<h2><%= @book_image.errors.count %>件のエラーが発生しました。</h2>
-  	<% @book.errors.full_messages.each do |message| %>
-  	<li><%= message %></li>
-   <% end %>
-  <% end %>
-<p>Title</p>
-<p><%= f.text_field :name %></p>
-<p>Opinion</p>
-<p><%= f.text_area :body %></p>
-<p><%= f.submit "Create Book" %></p>
-<% end %>
+<table class="table">
+	<tbody>
+		<tr></tr>
+		<tr>
+			<th>name</th>
+			<th><%= user.name %></th>
+		</tr>
+		<tr>
+			<th>introduce</th>
+			<th><%= user.introduce %></th>
+		</tr>
+	</tbody>
+</table>
+			<p><%= link_to "user edit", edit_user_path(current_user) %></p>
+			<h2>New book</h2>
+			<%= form_for(@book) do |f| %>
+			  <% if @book.errors.any? %>
+			  	<h2><%= @book.errors.count %>件のエラーが発生しました。</h2>
+			  	<% @book.errors.full_messages.each do |message| %>
+			  	<li><%= message %></li>
+			   <% end %>
+			  <% end %>
+			<p>Title</p>
+			<p><%= f.text_field :name %></p>
+			<p>Opinion</p>
+			<p><%= f.text_area :body %></p>
+			<p><%= f.submit "Create Book" %></p>
+			<% end %>
+</div>
+</div>
