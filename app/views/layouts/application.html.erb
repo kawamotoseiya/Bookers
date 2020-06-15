@@ -12,36 +12,40 @@
   <div class="navbar navbar-default navbar-inverse">
     <div class="container">
     <nav class="nav navbar-nav navbar-left">
-      <h3>Bookers</h3>
+      <h3 class="text-primary">Bookers</h3>
     </nav>
     <nav>
       <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
-            <li class="">
+            <h4>
+            <span class="glyphicon glyphicon-home home">
               <%= link_to 'Home', user_path(current_user.id) %>
-            </li>
-            <li class="">
+            </span>
+            <spam class="glyphicon glyphicon-user users">
               <%= link_to 'Users', users_path %>
-            </li>
-            <li class="">
+            </spam>
+            <span class="glyphicon glyphicon-book books"">
               <%= link_to 'Books', books_path %>
-            </li>
-            <li class="">
+            </span>
+            <span class="glyphicon glyphicon-log-out logout">
               <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-            </li>
+            </span>
+            </h4>
           <% else %>
-            <li class="">
-              <%= link_to 'Home', new_user_registration_path %>
-            </li>
-            <li class="">
-              <%= link_to 'About', todolists_show_path %>
-            </li>
-            <li class="">
+          <h4>
+            <span class="glyphicon glyphicon-home home">
+              <%= link_to 'Home', homes_action1_path %>
+            </span>
+            <span class="glyphicon glyphicon-link about">
+              <%= link_to 'About', homes_action2_path %>
+            </span>
+            <span class="glyphicon glyphicon-link about">
               <%= link_to "Sign up", new_user_registration_path %>
-            </li>
-            <li class="">
+            </span>
+            <span class="glyphicon glyphicon-log-in sign_in">
               <%= link_to "Log in", new_user_session_path %>
-            </li>
+            </span>
+          </h4>
       <% end %>
       </ul>
     </nav>

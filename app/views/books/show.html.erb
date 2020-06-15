@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-3">
-			<%= render 'books/list', books:@books, user:current_user %>
+			<%= render 'books/list', books:@books, user:@user %>
 		</div>
 	<div class="col-xs-9">
 <h2>Book detail</h2>
@@ -16,8 +16,8 @@
 	</thead>
 	<tbody>
 			<tr>
-				<td><%= attachment_image_tag @user, :profile_image, :fill, 10, :px, 10, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%></td>
-				<td><%= @book.name %></td>
+				<td><%= attachment_image_tag @user, :profile_image, :fill, 5, 5, format:'jpeg', fallback: "no_image.jpg", size:'50x50' %></td>
+				<td><%= @book.title %></td>
 				<td><%= @book.body %></td>
 				<% if @book.user == current_user %>
 				<td><%= link_to "Edit", edit_book_path(@book) %></td>
@@ -31,3 +31,12 @@
 	</div>
 	</div>
 </div>
+<footer>
+  <div class="container">
+  	<div class="row">
+    	<div class="col-xs-3 col-xs-offset-9">
+    		<p>CopyRight Infratop.inc</p>
+    	</div>
+    </div>
+  </div>
+</footer>

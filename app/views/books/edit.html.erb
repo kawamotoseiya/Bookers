@@ -16,7 +16,7 @@
 <% end %>
 <%= form_for(@book, url:"/books/#{@book.id}") do |f| %>
 	<p>Title</p>
-	<%= f.text_field :name %>
+	<%= f.text_field :title %>
 	<p>Opinion</p>
 	<%= f.text_area :body %><br>
 	<%= f.submit 'Update Book' %><br>
@@ -24,3 +24,12 @@
     <%= link_to "Show", book_path %>
 	<%= link_to "back", books_path %>
 </div>
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3 col-xs-offset-9">
+        <p>CopyRight Infratop.inc</p>
+      </div>
+    </div>
+  </div>
+</footer>
