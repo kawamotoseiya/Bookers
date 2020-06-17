@@ -16,7 +16,10 @@
 	</thead>
 	<tbody>
 			<tr>
-				<td><%= attachment_image_tag @user, :profile_image, :fill, 5, 5, format:'jpeg', fallback: "no_image.jpg", size:'50x50' %></td>
+				<td><%= link_to @user do %>
+					<%= attachment_image_tag @user, :profile_image, :fill, 5, 5, format:'jpeg', fallback: "no_image.jpg", size:'50x50' %><%= @user.name %>
+					<% end %>
+				</td>
 				<td><%= @book.title %></td>
 				<td><%= @book.body %></td>
 				<% if @book.user == current_user %>
